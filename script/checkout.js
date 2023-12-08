@@ -11,6 +11,7 @@ function getRows() {
     return oni.map((item, index) => {
         // Calculate the total price for the item
         let price = item.price * item.quantity;
+        //price is not defined don't know what to do 
 
         // Return the HTML row for the items here
         return `
