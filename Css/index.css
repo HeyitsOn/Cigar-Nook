@@ -106,4 +106,8 @@ footer {
     bottom: 0;
     width: 100%;
 }
+img{
+    justify-content: center;
+    padding-bottom: 50%;
+}
 
