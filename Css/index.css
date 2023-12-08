@@ -4,8 +4,13 @@ body, h1, p {
     background-color:white;
 }
 
-header{
+#foot{ width: 10%; /* Adjust the size as needed */
+    height: 20%; /* Adjust the size as needed */
 }
+img{
+    height:50%;
+}
+
 
 nav {
     padding: 1rem;
