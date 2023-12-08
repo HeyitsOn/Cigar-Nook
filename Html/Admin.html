@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="/Css/index.css">
+    <title>Admin</title>
+</head>
+<body>
+<header>
+  <nav>
+<div class="container">
+    <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+<div class="col-md-3 mb-2 mb-md-0">
+<a href="/" class="d-inline-flex link-body-emphasis text-decoration-none">
+<svg class="bi" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg>
+</a>
+</div>
+<ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+<li><a href="/index.html" class="nav-link px-2 link">Home</a></li>
+<li><a href="/Html/About.html" class="nav-link px-2">About</a></li>
+<li><a href="/Html/Product.html" class="nav-link px-2">Product</a></li>
+<li><a href="/Html/Checkout.html" class="nav-link px-2">Checkout</a></li>
+<li><a href="/Html/Admin.html" class="nav-link px-2">Admin</a></li>
+<li><a href="/Html/Contact.html" class="nav-link px-2">Contact</a></li>
+</ul>
+<nav>
+</header>
+<main>
+<h2>Shopping Cart/Admin</h2>
+<div class="col-md-3 text-end">
+  <input type="text" id="search" placeholder="search" class="form-control mb-2">
+  <button type="button" class="btn btn-primary">Sort</button>
+  </div>
+<table>
+<tr>
+</tr>
+</table>
+<!-- Button for modal -->
+<button type="butt" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ExModal">
+Add product</button>
+<!-- Modal -->
+<div class="modal fade" id="ExModal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-header">
+<h5 class="title" id="ModalLabel">New products</h5>
+<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+</div>
+<div class="modal-body">
+  <!-- Input fields for adding a new product -->
+  <input type="text" id="pName" placeholder="Name" class="form-control mb-2">
+<input type="text"  id="Description" placeholder="Product Description" class="form-control mb-2">
+<input type="text" id="ProductImageUrl" placeholder="Image" class="form-control mb-2">
+<input type="MixedInput" id="ProductPrice" placeholder="Price" class="form-control mb-2">
+
+</div>
+<div class="modal-footer">
+<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+<button type="button" class="btn btn-primary" onclick="addProduct()">Save </button>
+</div>
+</div>
+    </div>
+</div>
+<div class="sign">
+  <img src="https://i.postimg.cc/NMdPb3QX/n-removebg-preview.png">
+  </div>
+  
+</main>
+</main>
+    <footer>
+      <span>&copy; 2023 Cigar Nook </span>
+      </footer>    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="/script/admin.js"></script>
+</body>
+  </body>
+</html>
