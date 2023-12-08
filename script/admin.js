@@ -1,7 +1,7 @@
 // make an empty array called 'admin' to store product information.
 let admin = [];
 
-// Define a function constructor for creating product objects with specified properties.
+// a function constructor for creating product objects with specified properties.
 function Constructor(name, description, price, url) {
     this.name = name;
     this.description = description;
@@ -9,7 +9,7 @@ function Constructor(name, description, price, url) {
     this.url = url;
 }
 
-// Create five product objects using the Constructor and add them to the 'admin' array.
+// have  five product objects using the Constructor and add them to the 'admin' array.
 let item1 = new Constructor('DavidOff', 'A box of Special', 592.00, "https://i.postimg.cc/wBhsgtrh/davidoff.jpg")
 let item2= new Constructor ('Corona ', ' A box of Romeo y Julieta' ,"189.95", "https://i.postimg.cc/sxth3p34/corona.jpg")
 let item3= new Constructor('Cohiba' , ' A box of Siglo I', 560.00, "https://i.postimg.cc/fLP3vxSQ/ciger-c-jpg2.jpg") 
@@ -20,17 +20,17 @@ let item5= new Constructor(' Fuente', 'A box of Chateau', 142,  "https://i.posti
 // Push the created items into the 'admin' array.
 admin.push(item1, item2, item3, item4, item5);
 
-// Store the 'admin' array in the browser's localStorage after converting it to a JSON string.
+// Stored the 'admin' array in the browser's localStorag uile after converting it to a JSON string.
 localStorage.setItem('admin', JSON.stringify(admin));
-// Retrieve the 'admin' array from localStorage and parse it back into a JavaScript object.
+// get the 'admin' array from localStorage and parse it back into a JavaScript object.
 admin = JSON.parse(localStorage.getItem('admin'));
 
 // Select the table element from the HTML document.
 let table = document.querySelector('table');
 
-// Define a function 'o' to render the product items into the HTML table.
+// a function 'o' to  the product the HTML table.
 function o() {
-    // Use the 'map' function to create an HTML string for each product item.
+    // Used the 'map' function to create an HTML string for each product item.
     let p = admin.map(function (item, index) {
         console.log(item);
         console.log(index);
@@ -40,7 +40,6 @@ return `
 <td>${item.name}</td>
 <td>${item.description}</td>
 <td>R ${item.price}</td>
-<td>${item.quantity}</td>
 <td><img src="${item.url}" height="100px" width="100px"></td>
 <td><button class='change' data-index="${index}">Edit</button></td>
 <td><button class='delete' value=${index}>Delete</button></td>  
@@ -61,7 +60,7 @@ function Ape() {
     admin = JSON.parse(localStorage.getItem('admin'));
 }
 
-// a function 'remove' to delete a product item at a specified position, update 'admin'
+// a function 'remove' to delete a products
 function remove(position) {
     admin.splice(position, 1);
     Ape();
@@ -74,12 +73,12 @@ table.addEventListener('click', function (event) {
         // If the clicked button has the 'delete' class, call the 'remove' function with the button's value
         remove(event.target.value);
     } else if (event.target.classList.contains('change')) {
-        // If the clicked button has the 'change' class, open a modal for editing the selected item
+        // If the clicked button has the 'change' class it must open a modal for editing the selected item
         herModal(admin[event.target.dataset.index]);
     }
 });
 
-//  a function 'herModal' to display a modal with detailed information about a selected product item.
+//  a function 'herModal' to show a modal with  something
 function herModal(item) {
     let Modals = new Yoni.Modal(document.getElementById('ExModal'));
     document.querySelector('.title').innerText = item.name;
@@ -87,21 +86,21 @@ function herModal(item) {
     Modals.show();
 }
 
-//  a function 'addProduct' to add a new product based on user input and update 'admin' and the table
+//  a function 'addProduct' to add a new product 
 function addProduct() {
-    // Retrieve user input values for the new product
+    // get user input  
     let pName = document.getElementById('pName').value;
     let Description = document.getElementById('Description').value;
     let ProductImageUrl = document.getElementById('ProductImageUrl').value;
     let ProductPrice = parseFloat(document.getElementById('ProductPrice').value);
 
-    // Create a new product object using the Constructor and user input
+    // Create a new product object using the Constructor 
     let newItem = new Constructor(pName, Description, ProductPrice, ProductImageUrl);
 
     // Push the new product into the 'admin' array.
     admin.push(newItem);
 
-    // Update localStorage, re-render the table, and hide the modal
+    // Update localStorage
     Ape();
     o();
 
